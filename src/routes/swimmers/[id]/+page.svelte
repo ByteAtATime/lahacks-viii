@@ -43,6 +43,8 @@
 			time
 		);
 
+	$: getStandard('free', 440);
+
 	$: getHistory = (stroke) =>
 		$history
 			?.filter((doc) => doc.event.endsWith(`|${distance}|${stroke}`))

@@ -37,5 +37,3 @@ export const addTime = async (user: string, event: Event, time: number, _timesta
     { merge: true }
   );
 };
-
-if (typeof window !== 'undefined') window.addTime = addTime;
