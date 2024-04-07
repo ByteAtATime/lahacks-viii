@@ -57,29 +57,44 @@ setInterval(async () => {
     body: JSON.stringify({
       embeds: [
         {
-          title: 'Sets for today',
-          fields: sets.map((set) => ({
-            name: set.name,
-            value: `
-*Warmup:*
-${set.set.warmup
-                .map(formatItem)
-                .map((it) => '- ' + it)
-                .join('\n')}
-
-*Main set:*
-${set.set.main
-                .map(formatItem)
-                .map((it) => '- ' + it)
-                .join('\n')}
-
-*Cooldown:*
-${set.set.cooldown
-                .map(formatItem)
-                .map((it) => '- ' + it)
-                .join('\n')}
-`.trim()
-          }))
+          //           title: 'Sets for today',
+          //           fields: sets.map((set) => ({
+          //             name: set.name,
+          //             value: `
+          // *Warmup:*
+          // ${set.set.warmup
+          //                 .map(formatItem)
+          //                 .map((it) => '- ' + it)
+          //                 .join('\n')}
+          //
+          // *Main set:*
+          // ${set.set.main
+          //                 .map(formatItem)
+          //                 .map((it) => '- ' + it)
+          //                 .join('\n')}
+          //
+          // *Cooldown:*
+          // ${set.set.cooldown
+          //                 .map(formatItem)
+          //                 .map((it) => '- ' + it)
+          //                 .join('\n')}
+          // `.trim()
+          //           }))
+          title: "PB's for today",
+          fields: [
+            {
+              name: 'Calvin',
+              value: '*100 Y Freestyle*: 1:02.58 → 0:59.12'
+            },
+            {
+              name: 'Calvin',
+              value: '*50 Y Backstroke*: 0:34.12 → 0:31.23'
+            },
+            {
+              name: 'Oliver',
+              value: '*200 Y IM*: 2:21.58 → 2:17.67'
+            }
+          ]
         }
       ]
     })
