@@ -101,8 +101,8 @@
 					<p class="text-gray-400">{$t('home.least.type')}</p>
 				</div>
 			</div>
-			<button class="btn btn-secondary flex"
-				>{$t('home.least.breakdown')} <Icon src={ArrowRightCircle} class="w-6" /></button
+			<a class="btn btn-secondary flex" href="/categories"
+				>{$t('home.least.breakdown')} <Icon src={ArrowRightCircle} class="w-6" /></a
 			>
 		</div>
 		<div class="flex flex-col gap-y-4 rounded-2xl bg-base-300 p-8">
