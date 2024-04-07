@@ -26,3 +26,7 @@ types:
   kick: Kick
   sprint: Sprint
   drill/technique: Drill/Technique
+nav:
+  home: Home
+  sets: Sets
+  swimmers: Swimmers

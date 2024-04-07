@@ -45,7 +45,7 @@
 	};
 </script>
 
-<div class="mx-auto flex max-w-screen-lg flex-col">
+<div class="mx-auto flex max-w-screen-lg flex-col py-8">
 	<h1 class="mb-6 text-2xl font-bold">All Sets</h1>
 
 	<a class="btn btn-primary flex gap-x-1 self-end" href="/createSet"
