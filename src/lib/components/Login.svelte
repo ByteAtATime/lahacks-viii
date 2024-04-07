@@ -51,7 +51,10 @@
 						class="input input-bordered w-full max-w-xs"
 					/>
 				</label>
-				<button class="bg-primary-gradient btn btn-primary mt-4">Login</button>
+				<button
+					class="bg-primary-gradient shadow-glow btn btn-primary mt-4 border-0 text-white shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]"
+					>Login</button
+				>
 			</div>
 
 			<div class="divider md:divider-horizontal">OR</div>
