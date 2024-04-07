@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { Home, Icon, ListBullet, UserGroup, Users } from 'svelte-hero-icons';
+	import { Clock, Home, Icon, ListBullet, UserGroup, Users } from 'svelte-hero-icons';
 	import { t } from 'svelte-i18n';
 </script>
 
@@ -29,6 +29,13 @@
 			>
 				<Icon src={UserGroup} class="w-6" />
 				{$t('nav.swimmers')}
+			</a>
+			<a
+				class="flex items-center gap-x-1 rounded-lg px-3 py-2 text-xl transition-colors hover:bg-white/10"
+				href="/timer"
+			>
+				<Icon src={Clock} class="w-6" />
+				{$t('nav.timer')}
 			</a>
 		</div>
 	</div>
