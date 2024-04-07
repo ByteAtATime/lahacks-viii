@@ -1,3 +1,10 @@
+login:
+  title: Login
+  email: Email
+  password: Password
+  submit: Login
+  google: Sign in with Google
+  apple: Sign in with Apple
 home:
   welcome: Welcome back, <span class="font-bold">{name}</span>
   currently_coaching: Currently coaching <span class="font-bold">{team}</span>
@@ -21,6 +28,19 @@ strokes:
   breast: Breaststroke
   fly: Butterfly
   im: Individual Medley
+swimmers:
+  title: Swimmers
+  invite: Invite Swimmers
+  diff: <span class="font-bold text-2xl {class}">{diff}</span> secs
+  none: No swimmers found
+sets:
+  title: All Sets
+  new: New Set
+set:
+  edit: Edit Set
+  warmup: Warmup
+  main: Main Set
+  cooldown: Cooldown
 types:
   swim: Swim
   kick: Kick

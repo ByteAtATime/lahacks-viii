@@ -33,23 +33,13 @@
 				.sort((a, b) => a.timestamp - b.timestamp);
 		}
 	);
-
-	const leastPracticed = {
-		stroke: 'free',
-		type: 'drill/technique'
-	};
-
-	const stats = {
-		swimmerDiff: 5,
-		averageTimeDiff: -0.83
-	};
 </script>
 
 <div class="mx-auto flex max-w-screen-lg flex-col py-8">
-	<h1 class="mb-6 text-2xl font-bold">All Sets</h1>
+	<h1 class="mb-6 text-2xl font-bold">{$t('stats.title')}</h1>
 
 	<a class="btn btn-primary flex gap-x-1 self-end" href="/createSet"
-		><Icon src={Plus} class="w-8" /> New Set</a
+		><Icon src={Plus} class="w-8" />{$t('sets.add')}</a
 	>
 
 	<div class="grid w-full grid-cols-3 gap-x-4">

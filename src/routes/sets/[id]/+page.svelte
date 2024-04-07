@@ -3,6 +3,7 @@
 	import SetPartDisplay from '$lib/components/SetPartDisplay.svelte';
 	import { auth, firestore } from '$lib/firebase';
 	import { Icon, Pencil, PencilSquare } from 'svelte-hero-icons';
+	import { t } from 'svelte-i18n';
 	import { docStore, userStore } from 'sveltefire';
 
 	const id = $page.params.id;
@@ -41,17 +42,17 @@
 
 		{#if isCoach}
 			<a href="/sets/{id}/edit" class="btn btn-primary mb-4"
-				><Icon src={PencilSquare} class="w-6" /> Edit</a
+				><Icon src={PencilSquare} class="w-6" /> {$t('set.edit')}</a
 			>
 		{/if}
 
-		<h2 class="text-2xl font-bold">Warmup</h2>
+		<h2 class="text-2xl font-bold">{$t('set.warmup')}</h2>
 		<SetPartDisplay setPart={$set.set.warmup} />
 
-		<h2 class="text-2xl font-bold">Main Set</h2>
+		<h2 class="text-2xl font-bold">{$t('set.main')}</h2>
 		<SetPartDisplay setPart={$set.set.main} />
 
-		<h2 class="text-2xl font-bold">Cooldown</h2>
+		<h2 class="text-2xl font-bold">{$t('set.cooldown')}</h2>
 		<SetPartDisplay setPart={$set.set.cooldown} />
 	</div>
 {/if}

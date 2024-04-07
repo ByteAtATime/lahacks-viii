@@ -2,6 +2,7 @@
 	import { auth, firestore } from '$lib/firebase';
 	import { ArrowDownRight, ArrowUpRight, Icon, Plus } from 'svelte-hero-icons';
 	import { collectionStore, docStore, userStore } from 'sveltefire';
+	import { t } from 'svelte-i18n';
 	import { derived, readable } from 'svelte/store';
 
 	const user = userStore(auth);
@@ -29,12 +30,13 @@
 </script>
 
 <div class="mx-auto w-full max-w-screen-lg">
-	<h1 class="text-4xl font-bold">Swimmers</h1>
+	<h1 class="text-4xl font-bold">{$t('swimmers.title')}</h1>
 
 	<a href="/swimmers/invite">
 		<div class="flex justify-center">
 			<div class="max-w-1/5 flex flex-col items-center">
-				<Icon src={Plus} class="w-24" /> Invite Swimmers
+				<Icon src={Plus} class="w-24" />
+				{$t('swimmers.invite')}
 			</div>
 		</div></a
 	>
@@ -57,10 +59,17 @@
 										lastMonth.reduce((a, b) => a + b) / lastMonth.length}
 									<Icon
 										src={diff < 0 ? ArrowDownRight : ArrowUpRight}
-										class="w-8 text-success {diff > 0 && 'text-error'}"
+										class="w-8 {diff > 0 ? 'text-error' : 'text-success'}"
 									/>
 
-									{(diff / 1000).toFixed(2)} secs
+									<span>
+										{@html $t('swimmers.diff', {
+											values: {
+												diff: (diff / 1000).toFixed(2),
+												class: diff < 0 ? 'text-success' : 'text-error'
+											}
+										})}
+									</span>
 								{/if}
 							</p>
 							<p>
@@ -71,7 +80,7 @@
 				{/if}
 			{/each}
 		{:else}
-			<p>No swimmers found</p>
+			<p>{$t('swimmers.none')}</p>
 		{/if}
 	</div>
 </div>
