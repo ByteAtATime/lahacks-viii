@@ -34,6 +34,7 @@
 
 	const handleSave = async () => {
 		for (let i = 0; i < times.length; i++) {
+			console.log(times[i], assignedSwimmers[i]);
 			if (times[i] && assignedSwimmers[i]) {
 				await addTime(assignedSwimmers[i]!, event, times[i]);
 			}
@@ -43,8 +44,6 @@
 
 		goto('/');
 	};
-
-	$: console.log(assignedSwimmers);
 </script>
 
 <h2 class="text-2xl font-bold">{$t('timer.upload.title')}</h2>
