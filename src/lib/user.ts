@@ -16,6 +16,7 @@ export const addTime = async (user: string, event: Event, time: number, _timesta
   if (!pb || time < pb) {
     await updateDoc(doc(firestore, `users/${user}`), {
       pbs: {
+        ...pbs,
         [eventToKey(event)]: time
       }
     });
