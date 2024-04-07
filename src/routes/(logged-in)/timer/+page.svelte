@@ -23,7 +23,7 @@
 	const { open } = getContext('simple-modal') as Context;
 
 	$: {
-		if (times.every((time) => time !== 0)) {
+		if (times.length > 0 && times.every((time) => time !== 0)) {
 			open(UploadTimesModal, { times });
 			uploaded = true;
 		}
