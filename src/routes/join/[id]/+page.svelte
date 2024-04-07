@@ -14,7 +14,7 @@
 		const provider = new GoogleAuthProvider();
 		await signInWithPopup(auth, provider);
 
-		goto('/swimmer/onboard?team=' + id);
+		goto('/swimmers/onboard?team=' + id);
 	};
 </script>
 

@@ -20,7 +20,7 @@
 				),
 				docStore(firestore, `users/${swimmer}/monthly/${date.getFullYear()}-${date.getMonth()}`)
 			],
-			([user, monthly, lastMonthly]) => ({ user, monthly, lastMonthly })
+			([user, monthly, lastMonthly]) => ({ user, monthly, lastMonthly, id: swimmer })
 		);
 
 	$: swimmers = derived($team?.swimmers.map(swimmerWithDiff) ?? readable([]), (swimmers) =>
@@ -43,27 +43,29 @@
 		{#if swimmers}
 			{#each $swimmers as swimmer}
 				{#if swimmer}
-					<div class="grid grid-cols-3 rounded-xl bg-neutral px-8 py-4">
-						<p>{swimmer.user?.name}</p>
-						<p class="flex items-center gap-x-2">
-							{#if swimmer.monthly && swimmer.lastMonthly}
-								{@const thisMonth = swimmer.monthly.times}
-								{@const lastMonth = swimmer.lastMonthly.times}
-								{@const diff =
-									thisMonth.reduce((a, b) => a + b) / thisMonth.length -
-									lastMonth.reduce((a, b) => a + b) / lastMonth.length}
-								<Icon
-									src={diff < 0 ? ArrowDownRight : ArrowUpRight}
-									class="w-8 text-success {diff > 0 && 'text-error'}"
-								/>
+					<a href="/swimmers/{swimmer.id}">
+						<div class="grid grid-cols-3 rounded-xl bg-neutral px-8 py-4">
+							<p>{swimmer.user?.name}</p>
+							<p class="flex items-center gap-x-2">
+								{#if swimmer.monthly && swimmer.lastMonthly}
+									{@const thisMonth = swimmer.monthly.times}
+									{@const lastMonth = swimmer.lastMonthly.times}
+									{@const diff =
+										thisMonth.reduce((a, b) => a + b) / thisMonth.length -
+										lastMonth.reduce((a, b) => a + b) / lastMonth.length}
+									<Icon
+										src={diff < 0 ? ArrowDownRight : ArrowUpRight}
+										class="w-8 text-success {diff > 0 && 'text-error'}"
+									/>
 
-								{(diff / 1000).toFixed(2)} secs
-							{/if}
-						</p>
-						<p>
-							<a href="mailto:{swimmer.user?.email}" class="underline">{swimmer.user?.email}</a>
-						</p>
-					</div>
+									{(diff / 1000).toFixed(2)} secs
+								{/if}
+							</p>
+							<p>
+								<a href="mailto:{swimmer.user?.email}" class="underline">{swimmer.user?.email}</a>
+							</p>
+						</div>
+					</a>
 				{/if}
 			{/each}
 		{:else}
