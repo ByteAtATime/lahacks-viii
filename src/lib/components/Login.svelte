@@ -51,7 +51,7 @@
 						class="input input-bordered w-full max-w-xs"
 					/>
 				</label>
-				<button class="btn btn-primary mt-4">Login</button>
+				<button class="bg-primary-gradient btn btn-primary mt-4">Login</button>
 			</div>
 
 			<div class="divider md:divider-horizontal">OR</div>
