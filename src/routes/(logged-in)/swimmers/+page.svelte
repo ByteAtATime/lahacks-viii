@@ -44,7 +44,9 @@
 			{#each $swimmers as swimmer}
 				{#if swimmer}
 					<a href="/swimmers/{swimmer.id}">
-						<div class="grid grid-cols-3 rounded-xl bg-neutral px-8 py-4">
+						<div
+							class="grid transform-gpu grid-cols-3 rounded-xl bg-neutral px-8 py-4 transition-all hover:-translate-y-2 hover:shadow-xl"
+						>
 							<p>{swimmer.user?.name}</p>
 							<p class="flex items-center gap-x-2">
 								{#if swimmer.monthly && swimmer.lastMonthly}
