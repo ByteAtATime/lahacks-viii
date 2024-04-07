@@ -4,7 +4,7 @@
 	import { t } from 'svelte-i18n';
 </script>
 
-{#if !$page.url.pathname.startsWith('/onboarding')}
+{#if !$page.url.pathname.startsWith('/onboard')}
 	<div class="w-64 rounded-r-2xl bg-base-300">
 		<img src="/banner.svg" alt="SwimSetter" />
 
