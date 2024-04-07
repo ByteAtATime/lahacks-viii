@@ -15,7 +15,7 @@
 
 	const swimmer = docStore(firestore, `users/${$page.params.id}`);
 
-	$: pbs = $swimmer?.pbs;
+	$: pbs = $swimmer?.pbs ?? {};
 	$: history = collectionStore(firestore, `users/${$page.params.id}/history`);
 
 	const pb = (stroke: Stroke, distance: number) =>
