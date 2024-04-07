@@ -1,9 +1,10 @@
 <script>
+	import { page } from '$app/stores';
 	import { Home, Icon, ListBullet, UserGroup, Users } from 'svelte-hero-icons';
 	import { t } from 'svelte-i18n';
 </script>
 
-{#if !window.location.pathname.startsWith('/onboarding')}
+{#if !$page.url.pathname.startsWith('/onboarding')}
 	<div class="w-64 rounded-r-2xl bg-base-300">
 		<img src="/banner.svg" alt="SwimSetter" />
 

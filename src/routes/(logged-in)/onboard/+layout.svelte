@@ -7,10 +7,10 @@
 		{#key $page}
 			<ul class="steps absolute top-20 w-1/4">
 				<li class="step step-primary">Personal<br />Info</li>
-				<li class="step" class:step-primary={window.location.pathname.endsWith('team')}>
+				<li class="step" class:step-primary={$page.url.pathname.endsWith('team')}>
 					Team<br />Details
 				</li>
-				<li class="step" class:step-primary={window.location.pathname.endsWith('set')}>
+				<li class="step" class:step-primary={$page.url.pathname.endsWith('set')}>
 					Create<br />Set
 				</li>
 			</ul>
