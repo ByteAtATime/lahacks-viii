@@ -12,7 +12,7 @@
 		<div class="flex min-h-screen items-stretch">
 			<Nav />
 
-			<div class="w-full">
+			<div class="w-full px-4">
 				<slot />
 			</div>
 		</div>
