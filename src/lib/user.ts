@@ -37,4 +37,4 @@ export const addTime = async (user: string, event: Event, time: number, _timesta
   );
 };
 
-window.addTime = addTime;
+if (typeof window !== 'undefined') window.addTime = addTime;
