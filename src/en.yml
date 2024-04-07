@@ -1,0 +1,28 @@
+home:
+  welcome: Welcome back, <span class="font-bold">{name}</span>
+  currently_coaching: Currently coaching <span class="font-bold">{team}</span>
+  upcoming:
+    title: Upcoming Sets
+  least:
+    title: Least Practiced
+    stroke: Stroke
+    type: Type
+    breakdown: Category Breakdown
+  stats:
+    title: Team Stats
+    swimmer_diff: <span class="font-bold text-2xl {class}">{diff}</span> swimmers
+    time_diff: <span class="font-bold text-2xl {class}">{diff}</span> seconds
+    swimmers: Since Last Month
+    time: Average Sprint
+    view: View Swimmers
+strokes:
+  free: Freestyle
+  back: Backstroke
+  breast: Breaststroke
+  fly: Butterfly
+  im: Individual Medley
+types:
+  swim: Swim
+  kick: Kick
+  sprint: Sprint
+  drill/technique: Drill/Technique
