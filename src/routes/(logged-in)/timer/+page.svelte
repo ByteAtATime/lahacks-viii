@@ -3,6 +3,7 @@
 	import { formatTime } from '$lib/swimming';
 	import { getContext, onMount } from 'svelte';
 	import type { Context } from 'svelte-simple-modal';
+	import { t } from 'svelte-i18n';
 
 	let lanes = 5;
 	let startTime: number | null = null;
@@ -30,9 +31,11 @@
 </script>
 
 <div class="mx-auto flex max-w-screen-lg flex-col gap-y-4">
+	<h1 class="text-4xl font-bold">{$t('timer.title')}</h1>
+
 	<label class="form-control w-full">
 		<div class="label">
-			<span class="label-text">Lanes</span>
+			<span class="label-text">{$t('timer.lanes')}</span>
 		</div>
 		<input type="number" bind:value={lanes} class="input input-bordered w-full" min="1" max="20" />
 	</label>
@@ -40,7 +43,7 @@
 	<button
 		on:click={() => (startTime = Date.now())}
 		class="btn btn-primary w-full"
-		class:opacity-0={startTime !== null}>Start</button
+		class:opacity-0={startTime !== null}>{$t('timer.start')}</button
 	>
 
 	<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] justify-around gap-8">
@@ -62,6 +65,6 @@
 		on:click={() => {
 			open(UploadTimesModal, { times });
 			uploaded = true;
-		}}>Done</button
+		}}>{$t('timer.stop')}</button
 	>
 </div>

@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { eventToShortName, type AgeRange, type Event, type Stroke } from '$lib/swimming';
 	import standards from '../../standards.json';
+	import { t } from 'svelte-i18n';
 
 	let chart: HTMLCanvasElement;
 	let prevChart: Chart;
@@ -45,7 +46,13 @@
 		prevChart = new Chart(chart, {
 			type: 'radar',
 			data: {
-				labels: ['IM', 'Freestyle', 'Backstroke', 'Breastroke', 'Butterfly'],
+				labels: [
+					$t('strokes.im'),
+					$t('strokes.free'),
+					$t('strokes.back'),
+					$t('strokes.breast'),
+					$t('strokes.fly')
+				],
 				datasets: [
 					{
 						data: [

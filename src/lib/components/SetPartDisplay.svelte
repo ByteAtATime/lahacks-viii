@@ -20,7 +20,7 @@
 					{item.distance}
 				</td>
 				<td>
-					{item.interval ? formatTime(item.interval) : 'No interval'}
+					{item.interval ? formatTime(item.interval) : $t('set.no_interval')}
 				</td>
 			</tr>
 		{/each}

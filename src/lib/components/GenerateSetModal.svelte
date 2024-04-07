@@ -3,6 +3,7 @@
 	import { getContext } from 'svelte';
 	import { ExclamationTriangle, Icon, Sparkles } from 'svelte-hero-icons';
 	import type { Context } from 'svelte-simple-modal';
+	import { t } from 'svelte-i18n';
 
 	export let onSetGenerated: (set: SwimSet) => void;
 
@@ -34,25 +35,24 @@
 	};
 </script>
 
-<h1 class="text-4xl font-bold">Generate Set</h1>
+<h1 class="text-4xl font-bold">{$t('set.generate.title')}</h1>
 
 <div class="mb-4 mt-4 flex gap-x-2 rounded-lg bg-warning p-4 text-yellow-700" role="alert">
 	<Icon src={ExclamationTriangle} class="w-6 text-yellow-700" solid />
 	<div>
-		<span class="font-bold">Warning:</span>
-		Generating a set will overwrite your current set
+		{@html $t('set.generate.warning')}
 	</div>
 </div>
 
 <form class="flex flex-col gap-y-2" on:submit|preventDefault={handleSubmit}>
 	<label class="form-control w-full">
 		<div class="label">
-			<span class="label-text">Prompt</span>
+			<span class="label-text">{$t('set.generate.prompt')}</span>
 		</div>
 		<input
 			bind:value={prompt}
 			type="text"
-			placeholder="Sprint fly set"
+			placeholder={$t('set.generate.prompt_placeholder')}
 			class="input input-bordered w-full"
 			disabled={isLoading}
 		/>
@@ -60,12 +60,12 @@
 
 	<label class="form-control w-full">
 		<div class="label">
-			<span class="label-text">Time</span>
+			<span class="label-text">{$t('set.generate.time')}</span>
 		</div>
 		<input
 			bind:value={time}
 			type="text"
-			placeholder="1 hour"
+			placeholder={$t('set.generate.time_placeholder')}
 			class="input input-bordered w-full"
 			disabled={isLoading}
 		/>
@@ -73,7 +73,7 @@
 
 	<label class="form-control w-full">
 		<div class="label">
-			<span class="label-text">AI Model</span>
+			<span class="label-text">{$t('set.generate.model')}</span>
 		</div>
 		<select bind:value={model} class="select select-bordered">
 			<option value="mock">Mock</option>
@@ -83,7 +83,7 @@
 	</label>
 
 	{#if error}
-		<p class="text-error">Failed to generate set</p>
+		<p class="text-error">{$t('set.generate.error')}</p>
 	{/if}
 
 	<button class="btn btn-primary mt-4" disabled={isLoading}>
@@ -107,6 +107,6 @@
 		{:else}
 			<Icon src={Sparkles} class="w-8" />
 		{/if}
-		Generate Set
+		{$t('set.generate.submit')}
 	</button>
 </form>

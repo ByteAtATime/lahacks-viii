@@ -30,9 +30,11 @@ strokes:
   im: Individual Medley
 swimmers:
   title: Swimmers
-  invite: Invite Swimmers
   diff: <span class="font-bold text-2xl {class}">{diff}</span> secs
   none: No swimmers found
+  invite:
+    title: Invite Swimmers
+    copied: Copied invite link!
 sets:
   title: All Sets
   new: New Set
@@ -41,6 +43,33 @@ set:
   warmup: Warmup
   main: Main Set
   cooldown: Cooldown
+  not_found: Set not found
+  no_interval: No interval
+  create:
+    title: Create New Set
+    submit: Create!
+  generate:
+    title: Generate Set
+    warning: <span class="font-bold">Warning:</span> Generating a set will overwrite your current set
+    prompt: Prompt
+    prompt_placeholder: Sprint fly set
+    time: Time
+    time_placeholder: 1 hour
+    model: AI Model
+    error: Failed to generate set
+    submit: Generate Set
+timer:
+  title: Timer
+  start: Start
+  stop: Stop
+  lanes: Lanes
+  upload:
+    title: Upload Times
+    dnf: DNF
+    save: Save
+    lane: Lane
+    time: Time
+    swimmer: Swimmer
 types:
   swim: Swim
   kick: Kick

@@ -33,7 +33,7 @@
 		/>
 	</svg>
 {:else if $set === null}
-	<p>Set not found</p>
+	<p>{$t('set.not_found')}</p>
 {:else}
 	<div class="mx-auto max-w-screen-lg py-8">
 		<h1 class="mb-4 text-4xl font-bold">{$set.name}</h1>

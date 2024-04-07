@@ -1,2 +1,82 @@
+login:
+  title: 登录
+  email: 电子邮箱
+  password: 密码
+  submit: 登录
+  google: 使用 Google 登录
+  apple: 使用 Apple 登录
 home:
-  welcome: TODO {name}
+  welcome: 欢迎回来，<span class="font-bold">{name}</span>
+  currently_coaching: 当前教练 <span class="font-bold">{team}</span>
+  upcoming:
+    title: 即将进行的训练
+  least:
+    title: 最少练习
+    stroke: 泳姿
+    type: 类型
+    breakdown: 分类统计
+  stats:
+    title: 团队统计
+    swimmer_diff: <span class="font-bold text-2xl {class}">{diff}</span> 位游泳者
+    time_diff: <span class="font-bold text-2xl {class}">{diff}</span> 秒
+    swimmers: 自上个月以来
+    time: 平均短距离
+    view: 查看游泳者
+strokes:
+  free: 自由泳
+  back: 仰泳
+  breast: 蛙泳
+  fly: 蝶泳
+  im: 个人混合泳
+swimmers:
+  title: 游泳者
+  diff: <span class="font-bold text-2xl {class}">{diff}</span> 秒
+  none: 没有找到游泳者
+  invite:
+    title: 邀请游泳者
+    copied: 已复制邀请链接！
+sets:
+  title: 所有训练计划
+  new: 新建计划
+set:
+  edit: 编辑计划
+  warmup: 热身
+  main: 主要训练
+  cooldown: 冷却
+  not_found: 训练计划未找到
+  no_interval: 无间隔
+  create:
+    title: 创建新计划
+    submit: 创建！
+  generate:
+    title: 生成计划
+    warning: <span class="font-bold">警告：</span> 生成计划将覆盖当前计划
+    prompt: 提示
+    prompt_placeholder: 蝶泳训练
+    time: 时间
+    time_placeholder: 1 小时
+    model: AI 模型
+    error: 生成计划失败
+    submit: 生成计划
+timer:
+  title: 计时器
+  start: 开始
+  stop: 停止
+  lanes: 泳道
+  upload:
+    title: 上传计时
+    dnf: 未完成比赛
+    save: 保存
+    lane: 泳道
+    time: 计时
+    swimmer: 游泳者
+types:
+  swim: 游泳
+  kick: 踢水
+  sprint: 短距离
+  drill/technique: 练习/技术
+nav:
+  home: 主页
+  sets: 训练计划
+  swimmers: 游泳者
+  timer: 计时器

@@ -3,6 +3,7 @@
 	import QR from '@svelte-put/qr/svg/QR.svelte';
 	import { docStore, userStore } from 'sveltefire';
 	import { derived, type Readable } from 'svelte/store';
+	import { t } from 'svelte-i18n';
 
 	const user = userStore(auth);
 	const userData = docStore(firestore, `users/${$user?.uid}`);
@@ -17,7 +18,7 @@
 </script>
 
 <div class="mx-auto flex max-w-screen-lg flex-col items-center">
-	<h1 class="text-4xl font-bold">Invite Swimmers</h1>
+	<h1 class="text-4xl font-bold">{$t('swimmers.invite.title')}</h1>
 
 	<QR data={link} class="max-w-lg" shape="circle" logo="/logo.svg" />
 
@@ -31,6 +32,6 @@
 			setTimeout(() => {
 				copied = false;
 			}, 1500);
-		}}>{copied ? 'Copied Link!' : link}</button
+		}}>{copied ? $t('swimmers.invite.copied') : link}</button
 	>
 </div>

@@ -12,6 +12,7 @@
 		type Stroke
 	} from '$lib/swimming';
 	import { collectionStore, docStore } from 'sveltefire';
+	import { t } from 'svelte-i18n';
 
 	const swimmer = docStore(firestore, `users/${$page.params.id}`);
 
@@ -128,7 +129,7 @@
 						{#each ['free', 'back', 'breast', 'fly', 'im'] as stroke}
 							{@const _pb = pb(stroke, distance)}
 							<tr>
-								<td class="font-bold">{formatStroke(stroke)}</td>
+								<td class="font-bold">{$t(`strokes.${stroke}`)}</td>
 								<td class="min-w-32">{_pb ? formatTime(_pb) : '-'}</td>
 								{#key distance}
 									<td
