@@ -36,7 +36,7 @@
 		<div class="flex justify-center">
 			<div class="max-w-1/5 flex flex-col items-center">
 				<Icon src={Plus} class="w-24" />
-				{$t('swimmers.invite')}
+				{$t('swimmers.invite.title')}
 			</div>
 		</div></a
 	>

@@ -43,7 +43,7 @@
 	};
 </script>
 
-<h2 class="text-2xl font-bold">{$t('times.upload.title')}</h2>
+<h2 class="text-2xl font-bold">{$t('timer.upload.title')}</h2>
 
 <select bind:value={event.stroke} class="select select-bordered">
 	<option value="free">{$t('strokes.free')}</option>
