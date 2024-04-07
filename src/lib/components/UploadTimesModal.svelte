@@ -10,7 +10,7 @@
 	import { t } from 'svelte-i18n';
 
 	export let times: number[];
-	let assignedSwimmers: string[] = [];
+	let assignedSwimmers: (string | null)[] = times.map(() => null);
 	let event: Event = {
 		length: 50,
 		stroke: 'free',
@@ -24,7 +24,9 @@
 	$: teamData = docStore(firestore, `teams/${$userData?.team}`);
 	$: swimmersIds = $teamData?.swimmers ?? [];
 	$: swimmers = derived(
-		swimmersIds.map((id) => docStore(firestore, `users/${id}`)),
+		swimmersIds.map((id) =>
+			derived([docStore(firestore, `users/${id}`), readable(id)], ([doc, id]) => ({ ...doc, id }))
+		),
 		($swimmers) => $swimmers.filter((swimmer) => swimmer)
 	);
 
@@ -33,7 +35,7 @@
 	const handleSave = async () => {
 		for (let i = 0; i < times.length; i++) {
 			if (times[i] && assignedSwimmers[i]) {
-				await addTime(assignedSwimmers[i], event, times[i]);
+				await addTime(assignedSwimmers[i]!, event, times[i]);
 			}
 		}
 
@@ -41,6 +43,8 @@
 
 		goto('/');
 	};
+
+	$: console.log(assignedSwimmers);
 </script>
 
 <h2 class="text-2xl font-bold">{$t('timer.upload.title')}</h2>

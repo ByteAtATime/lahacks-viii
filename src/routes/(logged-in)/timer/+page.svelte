@@ -49,7 +49,7 @@
 	<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] justify-around gap-8">
 		{#each Array.from({ length: lanes }) as _, i}
 			<button
-				class="btn btn-square btn-primary aspect-square p-[50%]"
+				class="btn btn-square btn-primary flex aspect-square items-center justify-center p-[45%] text-6xl"
 				on:click={() => (times[i] = Date.now() - (startTime ?? Date.now()))}
 				disabled={startTime === null || times[i] !== 0}
 			>
